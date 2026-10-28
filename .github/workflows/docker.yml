@@ -53,15 +53,6 @@ jobs:
           exit-code: "0"
 
 
-      - name: Rapport Trivy (HTML)
-        uses: aquasecurity/trivy-action@v0.36.0
-        with:
-          image-ref: ${{ env.IMAGE }}:ci
-          format: template
-          template: "@/contrib/html.tpl"
-          output: trivy-report.html
-          exit-code: "0"
-
       - name: Resume dans la page du run
         if: always()
         run: |
